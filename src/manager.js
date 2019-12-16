@@ -31,7 +31,7 @@ export default class Manager {
         } else {
             const method = 'create' + Str.studly(driver) + 'Driver'
 
-            if (this.hasOwnProperty(method)) {
+            if (this[method]) {
                 return this[method]()
             }
         }

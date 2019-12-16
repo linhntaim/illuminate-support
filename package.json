@@ -1,6 +1,6 @@
 {
     "name": "illuminate-support",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Inspired by Laravel Framework",
     "main": "dist/index.js",
     "scripts": {
