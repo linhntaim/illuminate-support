@@ -1,0 +1,37 @@
+{
+    "name": "illuminate-support",
+    "version": "0.0.1",
+    "description": "Inspired by Laravel Framework",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "babel index.js --out-dir ./dist --delete-dir-on-start --minified --source-maps && babel src --out-dir ./dist/src --minified --source-maps",
+        "test": "nyc mocha --require @babel/register"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/linhntaim/illuminate-support.git"
+    },
+    "keywords": [
+        "laravel",
+        "framework",
+        "port",
+        "component",
+        "support"
+    ],
+    "author": "Nguyen Tuan Linh <contact@linhntaim.com> (https://linhntaim.com)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/linhntaim/illuminate-support/issues"
+    },
+    "homepage": "https://github.com/linhntaim/illuminate-support#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.7.5",
+        "@babel/core": "^7.7.5",
+        "@babel/preset-env": "^7.7.6",
+        "@babel/register": "^7.7.4",
+        "chai": "^4.2.0",
+        "coveralls": "^3.0.9",
+        "mocha": "^6.2.2",
+        "nyc": "^14.1.1"
+    }
+}
