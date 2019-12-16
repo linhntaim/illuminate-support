@@ -12,10 +12,13 @@ npm install illuminate-support
 
 ### Str
 
-- **`ucWords(str, delimiter = '\s\t\r\n\f\v')'`**
-    - Params:
-        - `str`: *(required)* The input string.
-        - `delimiter`: *(optional)* The optional delimiters contains the word separator characters.
+#### **`ucWords(str, delimiter = '\s\t\r\n\f\v')`**
+    
+- **`str`**:
+    - *(required)* The input string.
+- **`delimiter`**: 
+    - *(optional)* The optional delimiters contains the word separator characters.
+    - Default: `'\s\t\r\n\f\v'`.
 
 ```javascript
 import {Str} from 'illuminate-support'
@@ -27,9 +30,10 @@ const str2 = 'hello_world'
 console.log(Str.ucWords(str2, '_')) // output: 'Hello_World'
 ```
 
-- **`studly(value)'`**
-    - Params:
-        - `value`: *(required)* The input string.
+#### **`studly(value)`**
+    
+- **`value`**: 
+    - *(required)* The input string.
 
 ```javascript
 import {Str} from 'illuminate-support'
