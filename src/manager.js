@@ -3,8 +3,8 @@ import Str from './str'
 export default class Manager {
     constructor(app) {
         this.app = app
-        this.customCreators = []
-        this.drivers = []
+        this.customCreators = {}
+        this.drivers = {}
     }
 
     getDefaultDriver() {
