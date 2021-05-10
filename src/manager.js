@@ -18,7 +18,7 @@ export default class Manager {
             return null
         }
 
-        if (!this.drivers.hasOwnProperty(driver)) {
+        if (!(driver in this.drivers)) {
             this.drivers[driver] = this.createDriver(driver)
         }
 
@@ -26,9 +26,10 @@ export default class Manager {
     }
 
     createDriver(driver) {
-        if (this.customCreators.hasOwnProperty(driver)) {
+        if (driver in this.customCreators) {
             return this.callCustomCreator(driver)
-        } else {
+        }
+        else {
             const method = 'create' + Str.studly(driver) + 'Driver'
 
             if (this[method]) {
@@ -44,7 +45,6 @@ export default class Manager {
 
     extend(driver, callback) {
         this.customCreators[driver] = callback
-
         return this
     }
 
@@ -52,8 +52,8 @@ export default class Manager {
         return this.drivers
     }
 
-    __call(method, params) {
+    __call(method, ...params) {
         const driver = this.driver()
-        return driver.hasOwnProperty(method) ? driver[method](...params) : null
+        return driver && method in driver ? driver[method](...params) : null
     }
 }
